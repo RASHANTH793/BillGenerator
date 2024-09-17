@@ -28,15 +28,15 @@ public class RestaurantBillGenerator {
                 displayMenu();
 
                 // Take customer order
-                System.out.println("Enter the number of items you want to order:");
+                System.out.print("Enter the number of items you want to order: ");
                 int itemCount = sc.nextInt();
                 double totalBill = 0;
 
                 for (int i = 0; i < itemCount; i++) {
-                    System.out.println("Enter the product ID of item " + (i + 1) + ":");
+                    System.out.print("Enter the products ID of item " + (i + 1) + ": ");
                     int productId = sc.nextInt();
 
-                    System.out.println("Enter the quantity of the item:");
+                    System.out.print("Enter the quantity of the item: ");
                     int quantity = sc.nextInt();
 
                     // Fetch product details from the menu table
@@ -80,12 +80,12 @@ public class RestaurantBillGenerator {
 
     // Function to handle both new and returning customers
     public static int handleCustomer(Scanner sc) throws SQLException {
-        System.out.println("Is this an existing customer? (yes/no):");
-        sc.nextLine();  // Consume newline
+        System.out.print("Is this an existing customer? (yes/no): ");
+        sc.next();  // Consume newline
         String response = sc.nextLine().trim().toLowerCase();
 
         if (response.equals("yes")) {
-            System.out.println("Enter the customer name:");
+            System.out.println("Enter the customer name: ");
             String customerName = sc.nextLine();
 
             // Check if customer exists in the database
@@ -117,7 +117,7 @@ public class RestaurantBillGenerator {
         if (existingCustomerName != null) {
             customerName = existingCustomerName;
         } else {
-            System.out.println("Enter the customer name:");
+            System.out.print("Enter the customer name: ");
             customerName = sc.nextLine();
         }
 
