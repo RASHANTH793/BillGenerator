@@ -40,7 +40,7 @@ public class RestaurantBillGenerator {
                     int quantity = sc.nextInt();
 
                     // Fetch product details from the menu table
-                    String query = "SELECT product_name, price FROM menu WHERE product_id = " + productId;
+                    String query = "SELECT product_name, price FROM menu WHERE product_id =  " + productId;
                     ResultSet rs = statement.executeQuery(query);
 
                     if (rs.next()) {
